@@ -7,18 +7,27 @@
     
   <!-- ナビゲーションメニュー -->
   <nav class="navbar navbar-expand-lg navbar-light text-dark bg-dark" id="home">
-    <a class="navbar-brand text-white" href="#">〜みんなでつくるroutine〜</a>
+    <a class="navbar-brand text-white">〜みんなでつくるroutine〜</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="#">マイページorログイン</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">ログアウトor新規登録</a>
-        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="#">マイページ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">ログアウト</a>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="#">ログイン</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">新規登録</a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
