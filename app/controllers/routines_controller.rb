@@ -2,10 +2,13 @@ class RoutinesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @routines = Routine
   end
 
   def new
+    @routine = Routine.new
+  end
+
+  def create
   end
 
   private
