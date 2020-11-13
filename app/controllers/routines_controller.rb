@@ -10,12 +10,18 @@ class RoutinesController < ApplicationController
 
   def create
     Routine.create(routine_params)
+    if @routine.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
 
   def routine_params
     params.require(:routine).permit(:name, :image, :descrirtion, :category_id, :timeframe_id).merge(user_id: current_user.timeframe_id)
+  end
 
   def move_to_index
     unless user_signed_in?
