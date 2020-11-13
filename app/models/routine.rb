@@ -8,7 +8,7 @@ class Routine < ApplicationRecord
   with_options presence: true do
     validates :name, length: { maximum: 40 }
     validates :image
-    validates :description, length: { maxmum: 1000 }
+    validates :description, length: { maximum: 1000 }
   end
   with_options presence: true, numericality: { other_than: 1 } do
     validates :category_id

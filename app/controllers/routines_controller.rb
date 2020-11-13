@@ -20,7 +20,7 @@ class RoutinesController < ApplicationController
   private
 
   def routine_params
-    params.require(:routine).permit(:name, :image, :descrirtion, :category_id, :timeframe_id).merge(user_id: current_user.timeframe_id)
+    params.require(:routine).permit(:name, :image, :descrirtion, :category_id, :timeframe_id).merge(user_id: current_user.id)
   end
 
   def move_to_index

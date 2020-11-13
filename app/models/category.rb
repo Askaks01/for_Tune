@@ -1,4 +1,4 @@
-class Category < ApplicationRecord
+class Category < ActiveHash::Base
   self.data = [
     { id: 1, type: '___' },
     { id: 2, type: '生活に関するroutine: 衣類・化粧に関して' },

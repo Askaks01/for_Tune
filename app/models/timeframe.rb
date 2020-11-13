@@ -1,4 +1,4 @@
-class Timeframe < ApplicationRecord
+class Timeframe < ActiveHash::Base
   self.data = [
     { id: 1, type: '___' },
     { id: 2, type: '平日: 朝方' },
@@ -11,5 +11,5 @@ class Timeframe < ApplicationRecord
     { id: 9, type: '休日: 夜中' },
     { id: 10, type: '特に決まっていない' }
   ]
-  
+
 end
