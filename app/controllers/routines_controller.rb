@@ -9,7 +9,7 @@ class RoutinesController < ApplicationController
   end
 
   def create
-    Routine.create(routine_params)
+    @routine = Routine.new(routine_params)
     if @routine.save
       redirect_to root_path
     else
@@ -20,7 +20,7 @@ class RoutinesController < ApplicationController
   private
 
   def routine_params
-    params.require(:routine).permit(:name, :image, :descrirtion, :category_id, :timeframe_id).merge(user_id: current_user.id)
+    params.require(:routine).permit(:name, :image, :description, :category_id, :timeframe_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
