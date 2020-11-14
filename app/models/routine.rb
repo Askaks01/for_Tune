@@ -10,7 +10,7 @@ class Routine < ApplicationRecord
     validates :image
     validates :description, length: { maximum: 1000 }
   end
-  with_options presence: true, numericality: { other_than: 1 } do
+  with_options presence: true, numericality: { other_than: 1, message: 'Select' } do
     validates :category_id
     validates :timeframe_id
   end

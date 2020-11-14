@@ -2,6 +2,7 @@ class RoutinesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
+    @routines = Routine.order('created_at DESC')
   end
 
   def new

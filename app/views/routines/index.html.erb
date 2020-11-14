@@ -33,33 +33,19 @@
 <div class="container my-5" id="skill">
   <h2 class= "py-4 text-dark">みんなのroutine</h2>
   <div class="row row-cols-1 row-cols-md-3">
-    <div class="col mb-4">
-      <div class="card">
-        <img src="img/card.jpg" class="card-img-top px-3 mb-3" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Sample1</h5>
-          <p class="card-text">SampleSampleSampleSampleSampleSampleSampleSampleSampleSample</p>
-        </div>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card">
-        <img src="img/card.jpg" class="card-img-top px-3 mb-3" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Sample2</h5>
-          <p class="card-text">SampleSampleSampleSampleSampleSampleSampleSampleSampleSample</p>
-        </div>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card">
-        <img src="img/card.lpg" class="card-img-top px-3 mb-3" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Sample3</h5>
-          <p class="card-text">SampleSampleSampleSampleSampleSampleSampleSampleSampleSample</p>
-        </div>
-      </div>
-    </div>
+    <ul class='routine-lists col mb-4'>
+      <% if @routines.present? %>
+        <% @routines.each do |routine| %>
+          <li class='card'>
+            <%= link_to image_tag(routine.image, class: "card-img-top px-3 mb-3"), "#" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= routine.name %></h5>
+              <p class="card-text"><%= routine.description %></p>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>          
   </div>
 </div>
 
