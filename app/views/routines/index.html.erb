@@ -30,23 +30,23 @@
 </div>
 
 <!-- カード -->
-<div class="container my-5" id="skill">
-  <h2 class= "py-4 text-dark">みんなのroutine</h2>
-  <div class="row row-cols-1 row-cols-md-3">
-    <ul class='routine-lists col mb-4'>
-      <% if @routines.present? %>
-        <% @routines.each do |routine| %>
-          <li class='card'>
-            <%= link_to image_tag(routine.image, class: "card-img-top px-3 mb-3"), "#" %>
-            <div class="card-body">
-              <h5 class="card-title"><%= routine.name %></h5>
-              <p class="card-text"><%= routine.description %></p>
+<div class="card">
+  <h2 class= "check-title">みんなのroutine</h2>
+  <ul class='routine-lists'>
+    <% if @routines.present? %>
+      <% @routines.each do |routine| %>
+        <li class='routine'>
+          <div class="routine-img-content">
+            <%= link_to image_tag(routine.image, class: "routine-img"), "#" %>
+            <div class="routine-info">
+              <h5 class="routine-name"><%= routine.name %></h5>
+              <p class="routine-description"><%= routine.description %></p>
             </div>
-          </li>
-        <% end %>
+          </div>
+        </li>
       <% end %>
-    </ul>          
-  </div>
+    <% end %>
+  </ul>          
 </div>
 
 <%= render "footer" %>
