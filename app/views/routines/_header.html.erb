@@ -1,13 +1,16 @@
 <header>
-  <h1>for_Tune</h1>
-  <ul class='search-right'>
-    <li><%= link_to '生活に関するroutine', "#", class: "life-list" %></li>
-    <li><%= link_to '鍛えるためのroutine', "#", class: "training-list" %></li>
-  </ul>
+  <a href="/" style="color:#000001;text-decoration:none">
+  <h2><span class="fantasy">for</span>_<span class="Impact">Tune</span></h1>
+  <h6>Self-Management tool<h6>
+  </a>
     
   <!-- ナビゲーションメニュー -->
-  <nav class="navbar navbar-expand-lg navbar-light text-dark bg-dark" id="home">
-    <a class="navbar-brand text-white" href="">〜みんなでつくるroutine〜</a>
+  <nav class="navbar navbar-expand-lg navbar-right text-dark bg-dark" id="home">
+    <a class="navbar-brand text-white" href="">reload</a>
+    <ul class='category-search'>
+      <li><%= link_to '生活に関するroutine', "#", class: "life-list" %></li>
+      <li><%= link_to '鍛えるためのroutine', "#", class: "training-list" %></li>
+    </ul>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

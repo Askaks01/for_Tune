@@ -1,5 +1,17 @@
-.search-right {
+
+
+.fantasy {
+  font-family: fantasy;
+}
+
+.Impact {
+  font-family: Impact, serif;
+}
+
+.category-search {
   display: flex;
   list-style: none;
   align-items: flex-end;
 }
+
+
