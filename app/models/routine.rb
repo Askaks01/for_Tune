@@ -6,9 +6,9 @@ class Routine < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :name, length: { maximum: 40 }
+    validates :name, length: { maximum: 25 }
     validates :image
-    validates :description, length: { maximum: 1000 }
+    validates :description, length: { maximum: 100 }
   end
   with_options presence: true, numericality: { other_than: 1, message: 'Select' } do
     validates :category_id
