@@ -3,6 +3,7 @@ class RoutinesController < ApplicationController
 
   def index
     @routines = Routine.order('created_at DESC')
+    @newroutine = Routine.last
   end
 
   def new
@@ -16,6 +17,23 @@ class RoutinesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @routine = Routine.find(params[:id])
+  end
+
+  def edit
+    @routine = Routine.find(params[:id])
+  end
+
+  def update
+  end
+
+  def destroy
+    @routine = Routine.find(params[:id])
+    @routine.destroy
+    redirect_to root_path
   end
 
   private

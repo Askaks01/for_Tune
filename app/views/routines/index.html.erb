@@ -1,32 +1,12 @@
 <%= render "header" %>
 
 <%# 画面上部のスライダー部分 %>
-<div class='slider-contents'>
-  <h2 class='new-routine'>
-    NEW routine!!
-  </h2>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        生活に関するroutine
-      </div>
-      <div class="carousel-item">
-        鍛えるためのroutine
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+<div class="newroutine">
+  <%= link_to image_tag(@newroutine.image, class: "routine-img"), routine_path(@newroutine.id) %>
+  <div class="newroutine-text">
+    <h6 class="newroutine-logo">New routine !!</h6>
+    <h4 class="newroutine-name"><%= @newroutine.name %></h4>
+  </div>  
 </div>
 
 <!-- カード -->
@@ -37,11 +17,8 @@
       <% @routines.each do |routine| %>
         <li class='routine'>
           <div class="routine-img-content">
-            <%= link_to image_tag(routine.image, class: "routine-img"), "#" %>
-            <div class="routine-info">
-              <h5 class="routine-name"><%= routine.name %></h5>
-              <p class="routine-description"><%= routine.description %></p>
-            </div>
+            <%= link_to image_tag(routine.image, class: "routine-img"), routine_path(routine.id) %>
+            <h5 class="routine-name"><%= routine.name %></h5>        
           </div>
         </li>
       <% end %>
