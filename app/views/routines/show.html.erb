@@ -4,6 +4,8 @@
   <%= image_tag @routine.image %>
   <%= @routine.name %>
   <%= @routine.description %>
+  <%= @routine.category.type %>
+  <%= @routine.timeframe.type %>
 </div>
 
 <% if current_user.id == @routine.user_id %>
