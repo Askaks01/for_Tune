@@ -9,6 +9,5 @@ class User < ApplicationRecord
 
   validates :nickname, length: { maximum: 6 }, presence: true
   
-
   has_many :routines
 end

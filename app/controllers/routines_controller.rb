@@ -28,6 +28,12 @@ class RoutinesController < ApplicationController
   end
 
   def update
+    @routine = Routine.find(params[:id])
+    if @routine.update(routine_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private

@@ -1,1 +1,26 @@
-<p>hellow world</p>
+<%= render "header" %>
+
+<%= form_with model: @routine, url: routine_path(@routine.id), local: true do |f| %>
+  <%= render 'error_messages', model: f.object %>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Photos in routine</label>
+    <%= f.file_field :image, class:"form-control-file", id:"exampleFormControlFile1" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">What is routine?</label>
+    <%= f.text_area :name, class:"form-control", id:"exampleFormControlInput1", placeholder:"Routine work" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Category select</label>
+    <%= f.collection_select(:category_id, Category.all, :id, :type, {}, {class:"form-control", id:"exampleFormControlSelect1"}) %>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Timeframe select</label>
+    <%= f.collection_select(:timeframe_id, Timeframe.all, :id, :type, {}, {class:"form-control", id:"exampleFormControlSelect2", size:10}) %>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <%= f.text_area :description, class:"form-control", id:"exampleFormControlTextarea1", rows:"5" %>
+  </div>
+  <%= f.submit "submit", class:"send" %>
+<% end %>

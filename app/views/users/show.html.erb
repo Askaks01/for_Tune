@@ -1,0 +1,20 @@
+<%= render "routines/header" %>
+
+<!-- カード -->
+<div class="card">
+  <h2 class= "check-title">あなたのroutine</h2>
+  <ul class='routine-lists'>
+    <% if @routines.present? %>
+      <% @routines.each do |routine| %>
+        <li class='routine'>
+          <div class="routine-img-content">
+            <%= link_to image_tag(routine.image, class: "routine-img"), routine_path(routine.id) %>
+            <h5 class="routine-name"><%= routine.name %></h5>        
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>          
+</div>
+
+<%= render "routines/footer" %>
