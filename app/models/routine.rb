@@ -4,6 +4,7 @@ class Routine < ApplicationRecord
   belongs_to_active_hash :timeframe
   belongs_to :user
   has_one_attached :image
+  has_many :comments
 
   with_options presence: true do
     validates :name, length: { maximum: 25 }
