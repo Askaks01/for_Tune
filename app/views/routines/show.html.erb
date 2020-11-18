@@ -1,5 +1,6 @@
 <%= render "header" %>
 
+
 <div class="routine-show">
   <%= image_tag @routine.image %>
   <%= @routine.name %>
@@ -10,8 +11,6 @@
 
 <% if current_user.id == @routine.user_id %>
   <%= link_to 'routineの編集', edit_routine_path(@routine.id), method: :get, class: "routine-red-btn" %>
-  <p class='or-text'>or</p>
-  <%= link_to '削除', routine_path(@routine.id), method: :delete, class:'routine-destroy' %>      
 <% end %>
 
 <%= render "footer" %>

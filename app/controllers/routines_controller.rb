@@ -30,12 +30,6 @@ class RoutinesController < ApplicationController
   def update
   end
 
-  def destroy
-    @routine = Routine.find(params[:id])
-    @routine.destroy
-    redirect_to root_path
-  end
-
   private
 
   def routine_params
