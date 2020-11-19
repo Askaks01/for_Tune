@@ -21,6 +21,8 @@ class RoutinesController < ApplicationController
 
   def show
     @routine = Routine.find(params[:id])
+    @comment = Comment.new
+    @comments = @routine.comments.includes(:user)
   end
 
   def edit
