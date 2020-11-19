@@ -15,4 +15,12 @@ class Routine < ApplicationRecord
     validates :category_id
     validates :timeframe_id
   end
+
+  def self.search(search)
+    if search != ""
+      Routine.where('name LIKE(?)', "%#{search}%")
+    else
+      Routine.all
+    end
+  end
 end

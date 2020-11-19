@@ -38,6 +38,10 @@ class RoutinesController < ApplicationController
     end
   end
 
+  def search
+    @routines = Routine.search(params[:keyword])
+  end
+  
   private
 
   def routine_params
