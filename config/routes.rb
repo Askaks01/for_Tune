@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    collection do
+      get 'lifesearch'
+    end
+    collection do
+      get 'trainingsearch'
+    end
   end
   resources :users, only: :show
 end

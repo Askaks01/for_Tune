@@ -41,6 +41,14 @@ class RoutinesController < ApplicationController
   def search
     @routines = Routine.search(params[:keyword])
   end
+
+  def lifesearch
+    @routines = Routine.lifesearch.order('created_at DESC')
+  end
+
+  def trainingsearch
+    @routines = Routine.trainingsearch.order('created_at DESC')
+  end
   
   private
 

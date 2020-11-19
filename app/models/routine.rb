@@ -23,4 +23,13 @@ class Routine < ApplicationRecord
       Routine.all
     end
   end
+
+  def self.lifesearch
+    Routine.where(category_id: 2..4)
+  end
+
+  def self.trainingsearch 
+    Routine.where(category_id: 5..7)
+  end
+
 end
