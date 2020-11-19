@@ -12,5 +12,23 @@
   <%= link_to 'routineの編集', edit_routine_path(@routine.id), method: :get, class: "routine-red-btn" %>
 <% end %>
 
+<div class="container">
+  <%= form_with(model: [@routine, @comment], local: true) do |f| %>
+    <%= f.text_area :text, placeholder: "コメントする", rows: "3" %>
+    <%= f.submit "SEND" %>
+  <% end %>
+  <div class="comments">
+    <h4>＜コメント一覧＞</h4>
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 <%= render "footer" %>
 
