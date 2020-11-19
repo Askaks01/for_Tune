@@ -18,7 +18,7 @@ class Routine < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Routine.where('name LIKE)(?)', "%#{search}%")
+      Routine.where('name LIKE(?)', "%#{search}%")
     else
       Routine.all
     end
