@@ -41,7 +41,7 @@ class RoutinesController < ApplicationController
   def destroy
     @routine = Routine.find(params[:id])
     @routine.destroy
-    render :index
+    redirect_to root_path
   end
 
   def search
