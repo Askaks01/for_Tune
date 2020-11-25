@@ -38,6 +38,12 @@ class RoutinesController < ApplicationController
     end
   end
 
+  def destroy
+    @routine = Routine.find(params[:id])
+    @routine.destroy
+    render :index
+  end
+
   def search
     @routines = Routine.search(params[:keyword])
   end
