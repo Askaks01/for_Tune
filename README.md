@@ -12,10 +12,7 @@
  このアプリケーションを通じて、環境の変化が多い30代前後の方が周囲の方との比較を投稿されたルーティンから感じてもらい、参考にしてもらい不安を解消してもらう。
 
 ### 要件定義
-| 優先順位 | 機能       | 目的 | 詳細 | ストーリー（ユースケース） | 見積もり（所要時間） |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| group  | references | null: false, foreign_key: true |
+ https://docs.google.com/spreadsheets/d/107nN-SMLyn7mGWVEJcxTvyKwlWRWYjWM-60DeO9pHSE/edit#gid=282075926
 
 #### 実装予定の機能
  ルーティン自動削除機能
