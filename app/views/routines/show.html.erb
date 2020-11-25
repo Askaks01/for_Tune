@@ -10,6 +10,7 @@
 
 <% if current_user.id == @routine.user_id %>
   <%= link_to 'routineの編集', edit_routine_path(@routine.id), method: :get, class: "routine-red-btn" %>
+  <%= link_to 'routineの削除', routine_path(@routine.id), method: :delete, class: "routine-red-btn" %>
 <% end %>
 
 <div class="container">
