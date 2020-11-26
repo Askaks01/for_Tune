@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: for_Tune_production
-  username: for_Tune
-  password: <%= ENV['FOR_TUNE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
