@@ -1,13 +1,15 @@
 <%= render "header" %>
 
 <%# 画面上部のスライダー部分 %>
-<div class="newroutine">
-  <%= link_to image_tag(@newroutine.image, class: "routine-img"), routine_path(@newroutine.id) %>
-  <div class="newroutine-text">
-    <h6 class="newroutine-logo">New routine !!</h6>
-    <h4 class="newroutine-name"><%= @newroutine.name %></h4>
-  </div>  
-</div>
+<% if @newroutine.present? %>
+  <div class="newroutine">
+    <%= link_to image_tag(@newroutine.image, class: "routine-img"), routine_path(@newroutine.id) %>
+    <div class="newroutine-text">
+      <h6 class="newroutine-logo">New routine !!</h6>
+      <h4 class="newroutine-name"><%= @newroutine.name %></h4>
+    </div>  
+  </div>
+<% end %>
 
 <!-- カード -->
 <div class="card">
